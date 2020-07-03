@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g fill="none" fill-rule="evenodd" stroke="#574CFA" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(1 1)">
+    <line x1="61.5" x2=".5" y1="61.42" y2="61.42"/>
+    <polyline points="6.34 51.08 6.34 45.3 .5 45.3 10.24 33.92 20 45.3 14.14 45.3 14.14 51.08"/>
+    <polyline points="27.1 51.08 27.1 11.98 21.26 11.98 31 .58 40.74 11.98 34.9 11.98 34.9 51.08"/>
+    <polyline points="47.86 51.08 47.86 28.64 42 28.64 51.76 17.24 61.5 28.64 55.66 28.64 55.66 51.08"/>
+  </g>
+</svg>

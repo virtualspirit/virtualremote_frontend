@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g fill="none" fill-rule="evenodd">
+    <polygon points="0 0 24 0 24 24 0 24"/>
+    <path fill="#EC912B" fill-rule="nonzero" d="M12,14.656 L14.817,16.376 L14.051,13.166 L16.558,11.019 L13.268,10.755 L12,7.708 L12,14.656 Z M12,17 L6.122,20.59 L7.72,13.89 L2.49,9.41 L9.355,8.86 L12,2.5 L14.645,8.86 L21.511,9.41 L16.28,13.89 L17.878,20.59 L12,17 Z"/>
+  </g>
+</svg>
