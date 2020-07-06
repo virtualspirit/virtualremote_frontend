@@ -43,6 +43,7 @@ export const StackTopPositioned = styled(Stack)`
         left: ${props => props.size === "small" ? `2%` : `25%`};
         right: ${props => props.size === "small" ? `2%` : `25%`};
         transform: ${props => props.size === "small" ? `none` : `none`};
+        z-index: 5;
     }
 `;
 
