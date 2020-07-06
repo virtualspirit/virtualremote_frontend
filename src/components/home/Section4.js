@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Paragraph, Image, Text, ResponsiveContext } from 'grommet';
+import { Box, Heading, Paragraph, ResponsiveContext } from 'grommet';
 import { Divider, IconContainer, ShadowBox } from '../common/styledComponents';
 import bg2 from '../../assets/bg/bg2.png';
 import hire from '../../assets/WhyUs/1.svg';

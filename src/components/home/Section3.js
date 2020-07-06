@@ -14,10 +14,6 @@ const Section3 = () => {
         <Box>
             <Box align="center" justify="center" gap="small" direction={size === "small" ? "column" : "row"}
                 margin={{ horizontal: size === "small" ? "medium" : "xlarge", bottom: size === "small" ? "small" : "xlarge" }}>
-                {/* <Box direction="row" alignSelf="start">
-                    <Box width="small" alignSelf="center" className="line"></Box>
-                    <Box className="arrow right"></Box>
-                </Box> */}
                 {contents.map(({ title, desc }, k) => (
                     <Box key={k}>
                         <Circle value={k + 1}/>

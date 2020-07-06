@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Paragraph, ResponsiveContext } from 'grommet';
+import { Box, Heading, ResponsiveContext } from 'grommet';
 import { Divider } from '../common/styledComponents';
 
 const Section2 = () => {

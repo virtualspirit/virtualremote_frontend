@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Heading, Paragraph, Image, ResponsiveContext } from 'grommet';
+import { Box, Heading, Image, ResponsiveContext } from 'grommet';
 import { Divider } from '../common/styledComponents';
 import clogo1 from '../../assets/ClientsLogo/1.jpg';
 import clogo2 from '../../assets/ClientsLogo/2.jpg';

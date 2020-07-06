@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box, Heading, Text, Image, Stack, ResponsiveContext } from 'grommet';
+import { Avatar, Box, Heading, Text, ResponsiveContext } from 'grommet';
 import { Divider } from '../common/styledComponents';
 import skill1 from '../../assets/Skills/1.svg';
 import skill2 from '../../assets/Skills/2.svg';

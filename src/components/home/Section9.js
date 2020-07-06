@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box, Heading, Text, Image, Paragraph, ResponsiveContext } from 'grommet';
+import { Box, Heading, Image, Paragraph, ResponsiveContext } from 'grommet';
 import { FormNextLink } from 'grommet-icons';
 import Button from '../common/Button';
 import { Divider, ShadowBox, SmallText } from '../common/styledComponents';
