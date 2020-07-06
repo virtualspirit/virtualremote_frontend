@@ -5,9 +5,9 @@ import Circle from '../common/Circle';
 const Section3 = () => {
     const size = React.useContext(ResponsiveContext);
     const contents = [
-        { title: "Talk to One of Our Industry Experts", desc: "An expert on our team will work with you so understand your goals, technical needs, and team dynamics." },
-        { title: "Work With Hand-Selected Talent", desc: "Within days, we'll introduce you to the right talent for your project. Average time to match is under 24 hours." },
-        { title: "The Right Fit, Guaranteed", desc: "Work with your new team on a trial basis (pay only if satisfied), ensuring you hire the right people for the job." }
+        { title: "Talk to an expert", desc: "One of our industry experts will work with you to understand your requirements, business goals, and preferences." },
+        { title: "Get introduced to the right talent", desc: "We will help you find the right candidate within a few days. 24 hours is the average time we take." },
+        { title: "Hire on a trial basis", desc: "Work with your new talent on a trial basis. Pay only if you're fully satisfied." }
     ]
 
     return (
@@ -20,7 +20,7 @@ const Section3 = () => {
                 </Box> */}
                 {contents.map(({ title, desc }, k) => (
                     <Box key={k}>
-                        <Circle value={k+1} />
+                        <Circle value={k + 1}/>
                         <Heading margin={{ bottom: "none" }} level="5" textAlign="center">{title}</Heading>
                         <Paragraph size="small" textAlign="center">{desc}</Paragraph>
                     </Box>

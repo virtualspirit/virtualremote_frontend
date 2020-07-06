@@ -15,7 +15,21 @@ const AppRouter = () => {
             },
             colors: {
                 brand: '#574CFA'
-            }
+            },
+            // breakpoints: {
+            //     xsmall: {
+            //         value: 375
+            //     },
+            //     small: {
+            //         value: 900,
+            //     },
+            //     large: {
+            //         value: 1024,
+            //     },
+            //     xlarge: {
+            //         value: 1366,
+            //     }
+            // }
         },
     };
 

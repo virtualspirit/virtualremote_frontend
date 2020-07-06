@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Heading, Paragraph, Image, Text, ResponsiveContext } from 'grommet';
-import { Divider, IconContainer, WhyUsBox } from '../common/styledComponents';
+import { Divider, IconContainer, ShadowBox } from '../common/styledComponents';
 import bg2 from '../../assets/bg/bg2.png';
 import hire from '../../assets/WhyUs/1.svg';
 import talent from '../../assets/WhyUs/2.svg';
@@ -12,39 +12,40 @@ import needs from '../../assets/WhyUs/6.svg';
 const Section4 = () => {
     const size = React.useContext(ResponsiveContext);
     const whyUsContents = [
-        { icon: hire, title: "Hire Quickly", desc: "Hire in under 48 hours. Scale up or down, no strings attached. We offer flexible engagements from hourly to full-time." },
-        { icon: talent, title: "Best Classified Talent", desc: "Every applicant to the VRemote network is rigorously tested and vetted. Our highely selective process leads to a 98% trial-to-hire success rate." },
-        { icon: leading, title: "Leading the future of work", desc: "Our network is ready for tomorrow's business challenges by embracing advanced and specialized skills." },
-        { icon: level, title: "A Level Above", desc: "Easy single freelancer in our global network embodies the highest levels of integrity, professionalism, communication." },
-        { icon: management, title: "Modern Project Management", desc: "VRemote Project Consultants assemble managed teams of seasoned experts for your most urgent business needs." },
-        { icon: needs, title: "Fit All Your Business Needs", desc: "Digital product managers, scrum product owners with expertise in numerous industries like banking, healthcare, ecommerce, more." },
+        { icon: hire, title: "Easy hiring process", desc: "Hire in easy steps. Get the best talent in under 48 hours hand-selected by us." },
+        { icon: talent, title: "Most reliable remote workers", desc: "On this platform, you will get the best classified talent for your business requirements. Every freelancer is reliable." },
+        { icon: leading, title: "Modern and advanced skills", desc: "The remote workers on Virtual Remote possess the most advanced and modern skills." },
+        { icon: level, title: "Highly professional freelancers", desc: "The freelancers on VirtualRemote are highly professional with excellent communication skills. It's easy to work with them." },
+        { icon: management, title: "Smart project management", desc: "With smart project management, your project will get completed in a very systematic manner." },
+        { icon: needs, title: "Fulfill all of your requirements", desc: "On VRemote, you will find freelancers with different skills. So you can easily fulfill all your business needs." },
     ]
     const applyBox = ({ key, icon, title, desc }) => (
-        <WhyUsBox justify="end" pad="medium" key={key}>
+        <ShadowBox justify="start" pad="medium" key={key}>
             <Box alignSelf="start" justify="start" ><IconContainer src={icon} /></Box>
-            <Heading margin={{ bottom: "none" }} level="5" >{title}</Heading>
-            <Paragraph margin={{ top: "none" }} size="small">{desc}</Paragraph>
-        </WhyUsBox>
+            <Box>
+                <Heading margin={{ bottom: "none" }} level="5" >{title}</Heading>
+                <Paragraph margin={{ top: "none" }} size="small">{desc}</Paragraph>
+            </Box>
+        </ShadowBox>
     );
 
     return (
         <Box background={{
-            "opacity": true,
             "position": "center",
             "repeat": "repeat-y",
             "size": "contain",
             "image": `url(${bg2})`
-          }}>
-            <Box align="center" justify="center" gap="small" 
+        }}>
+            <Box align="center" justify="center"
                 margin={{ horizontal: size === "small" ? "medium" : "xlarge", bottom: size === "small" ? "small" : "xlarge" }}>
-                <Box align="center">
-                    <Heading margin={{ bottom: "none" }} level="3" textAlign="center">Build Amazing Teams, On Demand</Heading>
+                <Box height={size === "small" ? "145px" : "small"} align="center">
+                    <Heading margin={{ bottom: "none" }} level="3" textAlign="center">Build great teams effortlessly</Heading>
                     <Divider />
                     <Paragraph size="small" textAlign="center">Work with remote developers as you need them, from full-time remote engineering teams to hourly contractors.</Paragraph>
                 </Box>
-                <Box gap="small">
+                <Box gap={size === "small" ? "large" : "small"}>
                     {Array(Math.ceil(whyUsContents?.length / 3)).fill().map((_, i) => (
-                        <Box gap="small" direction={size === "small" ? "column" : "row"} key={i}>
+                        <Box gap={size === "small" ? "large" : "small"} direction={size === "small" ? "column" : "row"} key={i}>
                             {whyUsContents.map(({ icon, title, desc }, key) => (key >= 3 * (i + 1) - 3 && key <= 3 * (i + 1) - 1) && applyBox({ icon, title, desc, key }))}
                         </Box>
                     ))}

@@ -1,4 +1,6 @@
 import Home from '../components/home/Home';
+import ApplyUs from '../components/applyUs/ApplyUs';
+import Pricing from '../components/pricing/Pricing';
 
 const routes = [
     {
@@ -6,10 +8,14 @@ const routes = [
         component: Home,
         tag: "Home"
     },
-    // {
-    //     path: "/users",
-    //     component: Users
-    // },
+    {
+        path: "/join-us",
+        component: ApplyUs
+    },
+    {
+        path: "/pricing",
+        component: Pricing
+    },
     // {
     //     path: "/pageNotFound",
     //     component: PageNotFound
