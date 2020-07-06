@@ -44,7 +44,7 @@ const QuestionBoxTitle = ({ rowSize, setRowSize }) => {
 
     return (
         <StackTopPositioned fill anchor="top"  {...{ size }}
-            adjustChildTopPosition={size === 'small' ? "13rem" : "12rem"}>
+            adjustChildTopPosition={size === 'small' ? "14rem" : "12rem"}>
             <QuestionBoxTitleContainer
                 topText="APPLY AS A FREELANCE DEVELOPER"
                 title="Join our network of professional freelancers"
