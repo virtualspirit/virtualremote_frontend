@@ -58,7 +58,6 @@ export const questions = [
     {
         qn: 8, type: "pricingLevel", rowSize: { small: "100%", normal: "70%" }
     },
-
     // {
     //     qn: 9, type: "form", rowSize: {small:"0%", normal:"0%"}
     // },
