@@ -9,6 +9,10 @@ a {
 	transition: 0.5s;
 }
 
+a.pointer {
+	cursor: pointer;
+}
+
 a:hover,
 a:active,
 a:focus {

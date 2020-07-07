@@ -1,62 +1,57 @@
 import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { Box, Header, Text, Nav, DropButton, Image, ResponsiveContext } from 'grommet';
-import Button from '../common/Button';
-import { StyledAnchor } from '../common/styledComponents';
-import { Menu as MenuIcon } from 'grommet-icons';
 import vremoteLogo from '../../assets/Logo/Default.svg';
+import { useSelector, useDispatch } from "react-redux";
 import { navigateTo } from '../../store/actions/route'
 import { getState } from '../../store/selectors/route';
 
 const Head = () => {
-    const size = React.useContext(ResponsiveContext);
     const dispatch = useDispatch();
     const { location } = useSelector(getState);
+    const [showMobileNav, setMobileNav] = React.useState(false);
     const headerLabel = [{ label: "Home", path: "/" },
     { label: "CTO", path: "" }, { label: "Devoper", path: "/pricing" },
-    { label: "Designer", path: "/join-us" }, { label: "Blog", path: "" }
+    { label: "Designer", path: "/join-us" }, { label: "Blog", path: "" }, { label: "Start A Project", path: "" }
     ];
     const headerClickHandler = ({ path }) => {
         if (!path) return;
         dispatch(navigateTo({ path }));
     }
-    const drop = (
-        <DropButton
-            dropAlign={{ top: 'bottom', right: 'right' }}
-            dropContent={
-                <Box pad={{ vertical: "medium", horizontal: "xsmall" }} gap="small" width="small" align="start" background="light-2">
-                    {headerLabel.map((label, k) => <Box key={k} margin={{ left: "small" }} gap={"small"}>
-                        <StyledAnchor label={label.label}
-                            className={label.path === location.pathname && "active"}
-                            onClick={() => headerClickHandler(label)} />
-                    </Box>)}
-                </Box>
-            }>
-            <Box background="brand" pad={{ horizontal: "medium", vertical: "small" }} round="small"
-                margin={{ top: "small", bottom: "0", right: "small" }}>
-                <MenuIcon color="white" />
-            </Box>
-        </DropButton>
-    );
-    const Inline = (
-        <Nav direction="row" margin={{ right: "large" }} align="center">
-            {headerLabel.map((label, k) => <StyledAnchor key={k} label={label.label}
-                className={label.path === location.pathname && "active"}
-                onClick={() => headerClickHandler(label)} />)}
-            <Button name="Start A Poject" onClick={() => { console.log("clicked") }} />
-        </Nav >
-    );
-
+    const headerButton = {
+        backgroundColor: "#574CFA",
+        borderRadius: "6px",
+        boxShadow: "0 2px 4px 0 rgba(0, 61, 92, 0.1)",
+        color: "#fff"
+    }
+    const mobileNav = {
+        nav: "mobile-nav d-lg-none",
+        button: "fa fa-times",
+        container: "container mobile-nav-active"
+    }
 
     return (
-        <Header background="#FFFFFF" pad="small" elevation="small">
-            <Box direction="row" align="center" gap="small" margin={{ left: "xlarge" }}>
-                <Image src={vremoteLogo} />
-            </Box>
-            {size === "small" ? drop : Inline}
-        </Header>
+        <header id="header" className="fixed-top">
+            <div className={showMobileNav ? mobileNav.container : "container"}>
+                <div className="logo float-left">
+                    <a className="scrollto pointer"><img src={vremoteLogo} alt="" className="img-fluid" /></a>
+                </div>
+                <nav className={showMobileNav ? mobileNav.nav : "main-nav float-right d-none d-lg-block"}>
+                    <ul>
+                        {headerLabel.map((label, k) => <li key={k}
+                            className={`${label.path === location.pathname && "active"} ${label.label === "Devoper" && "drop-down"}`}
+                            onClick={() => headerClickHandler(label)} >
+                            <a className="pointer" {...(label.label === 'Start A Project' && { style: headerButton })}>{label.label}</a>
+                        </li>)}
+                    </ul>
+                </nav>
+                <button type="button" className="mobile-nav-toggle d-lg-none"
+                    onClick={() => { setMobileNav(prev => !prev) }}>
+                    <i className={showMobileNav ? mobileNav.button : "fa fa-bars"}></i>
+                </button>
+                <div className="mobile-nav-overly" style={{ display: showMobileNav ? "block" : "none" }}
+                    onClick={() => { setMobileNav(false) }}></div>
+            </div>
+        </header>
     )
 }
 
 export default Head
-

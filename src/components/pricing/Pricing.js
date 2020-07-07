@@ -1,9 +1,12 @@
 import React from 'react'
+import Head from '../common/Head';
+import Footer from '../common/Footer';
 
 const Pricing = () => {
     return (
         <div>
-            Pricing
+            <Head />
+            <Footer />
         </div>
     )
 }
