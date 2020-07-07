@@ -3,7 +3,7 @@ import { Box, Grommet, ResponsiveContext } from 'grommet';
 import { Route, Switch } from 'react-router';
 import routes from "./routes";
 import PrivateRoute from "./PrivateRoute";
-import '../styles/App.css'
+import '../styles'
 
 const AppRouter = () => {
     const theme = {

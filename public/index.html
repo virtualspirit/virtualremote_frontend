@@ -2,13 +2,31 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
-		<link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#594efa" />
-		<meta name="msapplication-TileColor" content="#594efa">
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="%PUBLIC_URL%/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="%PUBLIC_URL%/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="%PUBLIC_URL%/favicon-16x16.png"
+		/>
+		<link
+			rel="mask-icon"
+			href="%PUBLIC_URL%/safari-pinned-tab.svg"
+			color="#594efa"
+		/>
+		<meta name="msapplication-TileColor" content="#594efa" />
 		<meta name="theme-color" content="#ffffff" />
 		<meta
 			name="description"
@@ -27,7 +45,24 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+	-->
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+			rel="stylesheet"
+		/>
+
+		<!-- Bootstrap CSS File -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		/>
+
+		<!-- Libraries CSS Files -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 		<title>VRemote</title>
 	</head>
 	<body>
@@ -42,6 +77,54 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+	-->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script>
+			(function ($) {
+				"use strict";
+
+				// Mobile Navigation
+				if ($(".main-nav").length) {
+					var $mobile_nav = $(".main-nav").clone().prop({
+						class: "mobile-nav d-lg-none",
+					});
+					$("body").append($mobile_nav);
+					$("body").prepend(
+						'<button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>'
+					);
+					$("body").append('<div class="mobile-nav-overly"></div>');
+
+					$(document).on("click", ".mobile-nav-toggle", function (e) {
+						$("body").toggleClass("mobile-nav-active");
+						$(".mobile-nav-toggle i").toggleClass("fa-times fa-bars");
+						$(".mobile-nav-overly").toggle();
+					});
+
+					$(document).on("click", ".mobile-nav .drop-down > a", function (e) {
+						e.preventDefault();
+						$(this).next().slideToggle(300);
+						$(this).parent().toggleClass("active");
+					});
+
+					$(document).click(function (e) {
+						var container = $(".mobile-nav, .mobile-nav-toggle");
+						if (
+							!container.is(e.target) &&
+							container.has(e.target).length === 0
+						) {
+							if ($("body").hasClass("mobile-nav-active")) {
+								$("body").removeClass("mobile-nav-active");
+								$(".mobile-nav-toggle i").toggleClass("fa-times fa-bars");
+								$(".mobile-nav-overly").fadeOut();
+							}
+						}
+					});
+				} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+					$(".mobile-nav, .mobile-nav-toggle").hide();
+				}
+			})(jQuery);
+		</script>
 	</body>
 </html>
