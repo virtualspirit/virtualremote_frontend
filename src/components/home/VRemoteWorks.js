@@ -1,5 +1,6 @@
 import React from 'react';
 import { howItWorksImg1, howItWorksImg2, howItWorksImg3 } from './logo';
+import LazyImage from '../common/LazyImage';
 
 const VRemoteWorks = () => {
 
@@ -14,7 +15,7 @@ const VRemoteWorks = () => {
                 <div className="row how-vremote-row">
                     <div className="col-md-6">
                         <div className="how-vremote-left text-right">
-                            <img className="how-vremote-img" src={howItWorksImg1} alt="howItWorksImg1" />
+                            <LazyImage className="how-vremote-img" src={howItWorksImg1} alt="howItWorksImg1" />
                         </div>
                     </div>
                     <div className="col-md-6 padd-right-side">
@@ -35,14 +36,14 @@ const VRemoteWorks = () => {
                     </div>
                     <div className="col-md-6">
                         <div className="how-vremote-right text-left">
-                            <img className="how-vremote-img" src={howItWorksImg2} alt="howItWorksImg2" />
+                            <LazyImage className="how-vremote-img" src={howItWorksImg2} alt="howItWorksImg2" />
                         </div>
                     </div>
                 </div>
                 <div className="row how-vremote-row">
                     <div className="col-md-6">
                         <div className="how-vremote-left text-right">
-                            <img className="how-vremote-img" src={howItWorksImg3} alt="howItWorksImg3" />
+                            <LazyImage className="how-vremote-img" src={howItWorksImg3} alt="howItWorksImg3" />
                         </div>
                     </div>
                     <div className="col-md-6 padd-right-side">

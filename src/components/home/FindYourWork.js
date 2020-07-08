@@ -1,5 +1,6 @@
 import React from 'react';
 import { skill1, skill2, skill3, skill4, skill6, skill7, skill8, } from './logo';
+import LazyImage from '../common/LazyImage';
 
 const FindYourWork = () => {
     const skills = [{ name: "CTO", icon: skill8 }, { name: "Ruby on Rails", icon: skill1 }, { name: "React Native", icon: skill2 },
@@ -20,8 +21,9 @@ const FindYourWork = () => {
                             <ul className="skill-ul">
                                 {skills.map(({ name, icon }, key) => (
                                     <li className="skill-item" key={key}>
-                                        <img src={icon} alt="skill" /><p className="skill-txt">{name}</p><a >Learn <i className="fa fa-angle-right" />
-                                        </a>
+                                        <LazyImage src={icon} alt="skill" />
+                                        <p className="skill-txt">{name}</p>
+                                        <a >Learn <i className="fa fa-angle-right" /></a>
                                     </li>
                                 ))}
                             </ul>
