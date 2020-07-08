@@ -20,8 +20,8 @@ const VRemoteWorks = () => {
                     <div className="col-md-6 padd-right-side">
                         <div className="how-vremote-right text-left middle-text">
                             <p className="class-no">1</p>
-                            <h5 className="class-no-heading">Fulfill all of your requirements</h5>
-                            <p className="class-no-text">On VRemote, you will find freelancers with different skills. So you can easily fulfill all your business needs.</p>
+                            <h5 className="class-no-heading">We interview candidates.</h5>
+                            <p className="class-no-text">We will interview several freelancers and will select the right talent for you. So you don't need to spend time interviewing people.</p>
                         </div>
                     </div>
                 </div>
@@ -29,8 +29,8 @@ const VRemoteWorks = () => {
                     <div className="col-md-6 padd-left-side">
                         <div className="how-vremote-left text-right middle-text ">
                             <p className="class-no">2</p>
-                            <h5 className="class-no-heading">Fulfill all of your requirements</h5>
-                            <p className="class-no-text">On VRemote, you will find freelancers with different skills. So you can easily fulfill all your business needs.</p>
+                            <h5 className="class-no-heading">You meet simply the best candidates.</h5>
+                            <p className="class-no-text">Talk with us to to find the right freelancers that will help you in the best way possible. Whether you need one or multiple remote workers, you will get the right talent.</p>
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -48,8 +48,8 @@ const VRemoteWorks = () => {
                     <div className="col-md-6 padd-right-side">
                         <div className="how-vremote-right text-left middle-text">
                             <p className="class-no">3</p>
-                            <h5 className="class-no-heading">Fulfill all of your requirements</h5>
-                            <p className="class-no-text">On VRemote, you will find freelancers with different skills. So you can easily fulfill all your business needs.</p>
+                            <h5 className="class-no-heading">Hire in less time.</h5>
+                            <p className="class-no-text">With VRemote, you can save a great amount of time. You simply have to tell us your goals and requirements, and we will handle the rest.</p>
                         </div>
                     </div>
                 </div>

@@ -15,8 +15,8 @@ const BuildGreatTeam = () => {
                     <div className="col-md-4">
                         <div className="build-great-column">
                             <img src={hire} alt="buildTeam"/>
-                            <h5 className="class-no-heading">Hire on a trial basis</h5>
-                            <p className="class-no-text">Work with your new talent on a trial basis. Pay only if you're fully satisfied.</p>
+                            <h5 className="class-no-heading">Easy hiring process</h5>
+                            <p className="class-no-text">Hire in easy steps. Get the best talent in under 48 hours hand-selected by us.</p>
                         </div>
                     </div>
                     <div className="col-md-4">

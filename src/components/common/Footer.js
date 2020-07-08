@@ -18,14 +18,14 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="row ">
-                        <div className="col-lg-2 col-md-6 footer-links">
+                        <div className="col-md-3 footer-links">
                             <h4>Contact</h4>
                             <ul className="contact-list">
                                 <li><i className="fa fa-phone" />0197570530</li>
                                 <li><i className="fa fa-envelope" />hello@vremote.dev</li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-md-6 footer-contact">
+                        <div className="col-md-3 footer-contact">
                             <h4>Hire</h4>
                             <ul className="skill-ul">
                                 <li>Chief Technology Officer</li>
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <li>Frontend Developer</li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-md-6 footer-contact">
+                        <div className="col-md-3 footer-contact">
                             <h4>Start</h4>
                             <ul className="footer-start-list">
                                 <li>Start A Project</li>
@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="container-fluid copyright-contain">
-                <div className="copyright text-center">
+                <div className="copyright">
                     Copyright © 2019, VirtualRemote by VirtualSpirit Technology Sdn. Bhd. All Rights Reserved
                 </div>
             </div>
