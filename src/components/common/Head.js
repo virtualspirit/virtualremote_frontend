@@ -44,7 +44,7 @@ const Head = () => {
                     </ul>
                 </nav>
                 <button type="button" className="mobile-nav-toggle d-lg-none"
-                    onClick={() => { setMobileNav(prev => !prev) }}>
+                    onClick={() => { setMobileNav(prev => !prev) }}>{` `}
                     <i className={showMobileNav ? mobileNav.button : "fa fa-bars"}></i>
                 </button>
                 <div className="mobile-nav-overly" style={{ display: showMobileNav ? "block" : "none" }}

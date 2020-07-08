@@ -10,11 +10,13 @@ const routes = [
     },
     {
         path: "/join-us",
-        component: ApplyUs
+        component: ApplyUs,
+        tag: "ApplyUs"
     },
     {
         path: "/pricing",
-        component: Pricing
+        component: Pricing,
+        tag: "Pricing"
     }
 ];
 

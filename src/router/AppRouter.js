@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch } from 'react-router';
 import routes from "./routes";
-import PrivateRoute from "./PrivateRoute";
 import '../styles'
 
+const PrivateRoute = lazy(() => import('./PrivateRoute'));
+const renderLoader = () => <p>Loading...</p>;
 const AppRouter = () => {
-
     return (
         <Switch>
-            {routes.map(({ ...object }, k) => (
-                <PrivateRoute key={k} exact {...object} />
-            ))}
+            <Suspense fallback={renderLoader()}>
+                {routes.map(({ ...object }, k) => (
+                    <PrivateRoute key={k} exact {...object} />
+                ))}
+            </Suspense>
         </Switch>
     )
 }
