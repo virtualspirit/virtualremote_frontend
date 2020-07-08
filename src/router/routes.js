@@ -15,11 +15,7 @@ const routes = [
     {
         path: "/pricing",
         component: Pricing
-    },
-    // {
-    //     path: "/pageNotFound",
-    //     component: PageNotFound
-    // }
+    }
 ];
 
 export default routes;
