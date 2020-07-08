@@ -14,7 +14,7 @@ const VRemoteWorks = () => {
                 <div className="row how-vremote-row">
                     <div className="col-md-6">
                         <div className="how-vremote-left text-right">
-                            <img className="how-vremote-img" src={howItWorksImg1} />
+                            <img className="how-vremote-img" src={howItWorksImg1} alt="howItWorksImg1" />
                         </div>
                     </div>
                     <div className="col-md-6 padd-right-side">
@@ -35,14 +35,14 @@ const VRemoteWorks = () => {
                     </div>
                     <div className="col-md-6">
                         <div className="how-vremote-right text-left">
-                            <img className="how-vremote-img" src={howItWorksImg2} />
+                            <img className="how-vremote-img" src={howItWorksImg2} alt="howItWorksImg2" />
                         </div>
                     </div>
                 </div>
                 <div className="row how-vremote-row">
                     <div className="col-md-6">
                         <div className="how-vremote-left text-right">
-                            <img className="how-vremote-img" src={howItWorksImg3} />
+                            <img className="how-vremote-img" src={howItWorksImg3} alt="howItWorksImg3" />
                         </div>
                     </div>
                     <div className="col-md-6 padd-right-side">

@@ -32,7 +32,7 @@ const LearnAndGrow = () => {
                     {learnings.map(({ image, title, heading, desc, footL, footR }, key) => (
                         <div className="col-md-4" key={key}>
                             <div className="learn-grow-column">
-                                <img src={image} />
+                                <img src={image} alt={title} />
                                 <div className="learn-grow-small">
                                     <a className="class-no-link">{title}</a>
                                     <h5 className="class-no-heading">{heading}</h5>
@@ -56,7 +56,7 @@ const LearnAndGrow = () => {
                         <div className="base">
                             <div className="row">
                                 <div className="col-md-1">
-                                    <div className="base-img"><img src={idea} /></div>
+                                    <div className="base-img"><img src={idea} alt="idea" /></div>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="base-text">

@@ -7,7 +7,7 @@ const Intro = () => {
         <section id="intro" className="clearfix">
             <div className="container">
                 <div className="intro-img">
-                    <img src={workFromHomeImg} alt="" className="img-fluid" />
+                    <img src={workFromHomeImg} alt="workFromHomeImg" className="img-fluid" />
                 </div>
                 <div className="intro-info">
                     <h2>Are you a freelancer or an "<br />agency? Find work in minutes!</h2>

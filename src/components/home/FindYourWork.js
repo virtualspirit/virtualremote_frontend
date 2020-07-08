@@ -20,7 +20,7 @@ const FindYourWork = () => {
                             <ul className="skill-ul">
                                 {skills.map(({ name, icon }, key) => (
                                     <li className="skill-item" key={key}>
-                                        <img src={icon} /><p className="skill-txt">{name}</p><a >Learn <i className="fa fa-angle-right" />
+                                        <img src={icon} alt="skill" /><p className="skill-txt">{name}</p><a >Learn <i className="fa fa-angle-right" />
                                         </a>
                                     </li>
                                 ))}

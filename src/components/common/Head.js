@@ -32,7 +32,7 @@ const Head = () => {
         <header id="header" className="fixed-top">
             <div className={showMobileNav ? mobileNav.container : "container"}>
                 <div className="logo float-left">
-                    <a className="scrollto pointer"><img src={vremoteLogo} alt="" className="img-fluid" /></a>
+                    <a className="scrollto pointer"><img src={vremoteLogo} alt="logo" className="img-fluid" /></a>
                 </div>
                 <nav className={showMobileNav ? mobileNav.nav : "main-nav float-right d-none d-lg-block"}>
                     <ul>
@@ -44,7 +44,7 @@ const Head = () => {
                     </ul>
                 </nav>
                 <button type="button" className="mobile-nav-toggle d-lg-none"
-                    onClick={() => { setMobileNav(prev => !prev) }}>{` `}
+                    onClick={() => { setMobileNav(prev => !prev) }}>
                     <i className={showMobileNav ? mobileNav.button : "fa fa-bars"}></i>
                 </button>
                 <div className="mobile-nav-overly" style={{ display: showMobileNav ? "block" : "none" }}

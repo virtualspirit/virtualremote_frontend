@@ -11,9 +11,9 @@ const Footer = () => {
                         </div>
                         <div className="col-md-3 text-right">
                             <div className="social-links">
-                                <a href="#" className="linkedin"><i className="fa fa-linkedin" /></a>
-                                <a href="#" className="facebook"><i className="fa fa-facebook" /></a>
-                                <a href="#" className="twitter"><i className="fa fa-twitter" /></a>
+                                <a className="linkedin pointer"><i className="fa fa-linkedin" /></a>
+                                <a className="facebook pointer"><i className="fa fa-facebook" /></a>
+                                <a className="twitter pointer"><i className="fa fa-twitter" /></a>
                             </div>
                         </div>
                     </div>
