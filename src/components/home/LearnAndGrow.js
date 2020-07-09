@@ -57,7 +57,7 @@ const LearnAndGrow = () => {
                         <div className="base">
                             <div className="row">
                                 <div className="col-md-1">
-                                    <div className="base-img"><LazyImage src={idea} alt="idea" /></div>
+                                    <div className="base-img"><LazyImage src={idea} alt="idea" noNeedWidth={true} /></div>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="base-text">
