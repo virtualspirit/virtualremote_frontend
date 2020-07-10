@@ -9,8 +9,8 @@ const Head = () => {
     const { location } = useSelector(getState);
     const [showMobileNav, setMobileNav] = React.useState(false);
     const headerLabel = [{ label: "Home", path: "/" },
-    { label: "CTO", path: "" }, { label: "Devoper", path: "/pricing" },
-    { label: "Designer", path: "/join-us" }, { label: "Blog", path: "" }, { label: "Start A Project", path: "" }
+    { label: "CTO", path: "" }, { label: "Devoper", path: "" },
+    { label: "Designer", path: "/join-us" }, { label: "Blog", path: "" }, { label: "Start A Project", path: "/start-a-project" }
     ];
     const headerClickHandler = ({ path }) => {
         if (!path) return;

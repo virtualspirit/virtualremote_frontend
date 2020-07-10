@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/types';
 const initialState = {
     questions: [],
     currentQuestion: {},
-    selectedOption: "",
+    selectedOption: {},
     selectedAnswers: {}
 };
 
@@ -18,7 +18,7 @@ const applyUs = (state = initialState, { type, payload }) => {
         case actionTypes.APPLY_US_SET_VALUE:
             return {
                 ...state,
-                selectedOption: payload?.selectedOption ?? ""
+                selectedOption: { ...state.selectedOption, ...payload?.selectedOption }
             };
         case actionTypes.APPLY_US_SET_CURRENT_QUESTION:
             return {

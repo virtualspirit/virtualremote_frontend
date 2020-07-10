@@ -34,12 +34,11 @@ import skill8 from '../../assets/Skills/8.svg';
 import learnGrow1 from '../../assets/LearnAndGrow/1.png';
 import learnGrow2 from '../../assets/LearnAndGrow/2.png';
 import learnGrow3 from '../../assets/LearnAndGrow/3.png';
-import idea from '../../assets/Graphic/Idea.svg';
 import vremoteLogo from '../../assets/Logo/Default.svg';
 
 export {
     workFromHomeImg, howItWorksImg1, howItWorksImg2, howItWorksImg3, hire,
     talent, leading, level, management, needs, clogo1, clogo2, clogo3, clogo4, clogo5,
     clogo6, clogo7, clogo8, clogo9, clogo10, clogo11, clogo12, clogo13, clogo14, clogo15,
-    IconQuote, skill1, skill2, skill3, skill4, skill6, skill7, skill8, learnGrow1, learnGrow2, learnGrow3, idea, vremoteLogo,
+    IconQuote, skill1, skill2, skill3, skill4, skill6, skill7, skill8, learnGrow1, learnGrow2, learnGrow3, vremoteLogo,
 }

@@ -5,28 +5,33 @@ import Footer from '../common/Footer';
 import Idea from '../common/Idea';
 import Intro from './Intro';
 import RadioQuestionBox from '../common/RadioQuestionBox';
-import TextAreaQuestionBox from '../common/TextAreaQuestionBox';
 import NexBacButton from '../common/NexBacButton';
 import ThankBox from '../common/ThankBox';
+import CheckBoxQuestion from '../common/CheckBoxQuestion';
+import InputTagQuestion from '../common/InputTagQuestion';
 import Form from './Form';
 import { questions } from './questions';
-import { setInitialValue, changeHandler, backHandler, nextHandler } from '../../store/actions/applyUs';
-import { getState } from '../../store/selectors/applyUs';
+import { setInitialValue, changeHandler, backHandler, nextHandler } from '../../store/actions/startProject';
+import { getState } from '../../store/selectors/startProject';
 
-const ApplyUs = () => {
+const StartAProject = () => {
     const dispatch = useDispatch();
     const {
-        currentQuestion: { type, classForIdea, qn, question, options, placeHolder, textAreaAnswer, othersAnswer },
-        selectedOption
+        currentQuestion: { type, classForIdea, qn, question, options, suggestions },
+        selectedOption, checkedOptions, selectedTag
     } = useSelector(getState);
     React.useEffect(() => { dispatch(setInitialValue({ questions })) }, []);
 
     const radioQuestionBoxProps = {
-        question, options, selectedOption, othersAnswer,
+        question, options, selectedOption,
         onChangeHandler: value => dispatch(changeHandler(value))
     };
-    const textAreaQuestionProps = {
-        question, placeHolder, textAreaAnswer,
+    const checkBoxQuestionProps = {
+        question, options, checkedOptions,
+        onChangeHandler: value => dispatch(changeHandler(value))
+    };
+    const inputTagQuestionProps = {
+        question, suggestions, selectedTag: [{ id: "React", text: 'React' }],
         onChangeHandler: value => dispatch(changeHandler(value))
     };
     const nexBacButtonProps = {
@@ -38,7 +43,8 @@ const ApplyUs = () => {
         let QuestionComponent, props;
         switch (name) {
             case `radio`: QuestionComponent = RadioQuestionBox; props = radioQuestionBoxProps; break;
-            case `textArea`: QuestionComponent = TextAreaQuestionBox; props = textAreaQuestionProps; break;
+            case `checkbox`: QuestionComponent = CheckBoxQuestion; props = checkBoxQuestionProps; break;
+            case `tagInput`: QuestionComponent = InputTagQuestion; props = inputTagQuestionProps; break;
             case `form`: QuestionComponent = Form; break;
             case `thank`: QuestionComponent = ThankBox; break;
             default: break;
@@ -49,13 +55,16 @@ const ApplyUs = () => {
     }
 
     return (
-        <>
+        <div>
             <Head />
-            <Intro>{getQuestionComponent(type)}</Intro>
+            <Intro>
+                {getQuestionComponent(type)}
+            </Intro>
             <div className={classForIdea}><Idea /></div>
             <Footer />
-        </>
+        </div>
     )
 }
 
-export default ApplyUs
+export default StartAProject
+

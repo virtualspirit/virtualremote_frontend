@@ -1,12 +1,21 @@
 import { call, put, select, takeLatest } from "redux-saga/effects";
-import { setChangedValue, setCurrentQuestion, setCurrentAnswer } from "../actions/applyUs";
+import { setChangedValue, setCurrentQuestion, setCurrentAnswer } from "../actions/startProject";
 import * as actionTypes from '../actions/types';
-import { getState } from '../selectors/applyUs';
+import { getState } from '../selectors/startProject';
 
-function* changeHandler({ q, a }) {
+function* changeHandler({ q, a, isCheck, isRemove, isTag }) {
     console.log("Q & A", q, ":- ", a);
-    yield put(setChangedValue({ selectedOption: { [q]: a.value } }));
-    yield put(setCurrentAnswer({ q, a }));
+    if (isCheck) {
+        yield put(setChangedValue({ checkedOptions: { q, [isRemove ? `r` : `a`]: a } }));
+        const { checkedOptions } = yield select(getState);
+        yield put(setCurrentAnswer({ q, a: [...checkedOptions[q]] }));
+    } else if (isTag) {
+        yield put(setChangedValue({ selectedTag: { q, a } }));
+        yield put(setCurrentAnswer({ q, a }));
+    } else {
+        yield put(setChangedValue({ selectedOption: { [q]: a.value } }));
+        yield put(setCurrentAnswer({ q, a }));
+    }
 }
 
 function* backHandler({ questionNumber }) {
@@ -33,7 +42,15 @@ function* navigateQuestion(questionIndex) {
     };
     yield getSelectedOptions(questions[questionIndex].options);
     const selectedOption = { [questions[questionIndex].question]: selectedAnswers?.[questions[questionIndex].question]?.value, ...subQuestPrevOptions };
-    yield put(setChangedValue({ selectedOption }));
+    const checkedOptions = { q: questions[questionIndex].question, a: selectedAnswers?.[questions[questionIndex].question] };
+    const selectedTag = { q: questions[questionIndex].question, a: selectedAnswers?.[questions[questionIndex].question] ?? [] };
+    if (questions[questionIndex].type === `checkbox`) {
+        yield put(setChangedValue({ checkedOptions }));
+    } else if (questions[questionIndex].type === `tagInput`) {
+        yield put(setChangedValue({ selectedTag}));
+    } else {
+        yield put(setChangedValue({ selectedOption }));
+    }
     const currentQuestion = yield call(getCurrentQuestion, {
         questions, questionIndex, selectedAnswers, selectedOption
     });
@@ -51,15 +68,12 @@ const getCurrentQuestion = ({ questions, questionIndex, selectedAnswers, selecte
             }
             return { ...question, othersAnswer: { ...getOthersAnswer() } }
         };
-        case `textArea`: {
-            return { ...question, ...(typeof answer === "string" && { textAreaAnswer: answer }) }
-        };
         default: return question;
     }
 }
 
-export const applyUs = [
-    takeLatest(actionTypes.APPLY_US_CHANGE_HANDLER, changeHandler),
-    takeLatest(actionTypes.APPLY_US_BACK_BUTTON_HANDLER, backHandler),
-    takeLatest(actionTypes.APPLY_US_NEXT_BUTTON_HANDLER, nextHandler),
+export const startProject = [
+    takeLatest(actionTypes.START_PROJECT_CHANGE_HANDLER, changeHandler),
+    takeLatest(actionTypes.START_PROJECT_BACK_BUTTON_HANDLER, backHandler),
+    takeLatest(actionTypes.START_PROJECT_NEXT_BUTTON_HANDLER, nextHandler),
 ]

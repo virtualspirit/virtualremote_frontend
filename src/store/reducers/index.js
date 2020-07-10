@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import applyUs from './applyUs';
-import pricing from './pricing';
+import startProject from './startProject';
 
 export const history = createBrowserHistory();
 const appReducer = combineReducers({
   router: connectRouter(history),
-  applyUs, pricing
+  applyUs, startProject
 });
 
 const rootReducer = (state, action) => {
