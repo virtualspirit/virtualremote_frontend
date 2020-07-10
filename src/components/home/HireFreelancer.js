@@ -1,6 +1,9 @@
 import React from 'react';
+import { useDispatch } from "react-redux";
+import { navigateTo } from '../../store/actions/route'
 
 const HireFreelancer = () => {
+    const dispatch = useDispatch();
 
     return (
         <div className="great-freelancer">
@@ -14,12 +17,13 @@ const HireFreelancer = () => {
                 <div className="row">
                     <div className="col-md-6 text-right">
                         <div className="call-btn">
-                            <a className="call-buttn scrollto"><i className="fa fa-phone" />Schedule a call</a>
+                            <a className="call-buttn scrollto pointer"><i className="fa fa-phone" />Schedule a call</a>
                         </div>
                     </div>
                     <div className="col-md-6 text-left">
                         <div className="talent-btn">
-                            <a className="talent-buttn scrollto">JOIN AS A TALENT</a>
+                            <a className="talent-buttn scrollto pointer"
+                                onClick={() => { dispatch(navigateTo({ path: `/join-us` })) }}>JOIN AS A TALENT</a>
                         </div>
                     </div>
                 </div>

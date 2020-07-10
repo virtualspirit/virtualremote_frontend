@@ -1,8 +1,12 @@
 import React from 'react';
 import idea from '../../assets/Graphic/Idea.svg';
 import LazyImage from './LazyImage';
+import { useDispatch } from "react-redux";
+import { navigateTo } from '../../store/actions/route'
 
 const Idea = () => {
+    const dispatch = useDispatch();
+
     return (
         <div className="container-fluid base-container">
             <div className="row">
@@ -19,7 +23,8 @@ const Idea = () => {
                                 </div>
                             </div>
                             <div className="col-md-3 text-right">
-                                <div className="base-btn"><button className="base-join-btn">JOIN AS A TALENT <i className="fa fa-long-arrow-right" /></button> </div>
+                                <div className="base-btn"><button className="base-join-btn"
+                                    onClick={() => { dispatch(navigateTo({ path: `/join-us` })) }}>JOIN AS A TALENT <i className="fa fa-long-arrow-right" /></button> </div>
                             </div>
                         </div>
                     </div>

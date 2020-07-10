@@ -1,6 +1,10 @@
 import React from 'react';
+import { useDispatch } from "react-redux";
+import { navigateTo } from '../../store/actions/route'
 
 const Footer = () => {
+    const dispatch = useDispatch();
+
     return (
         <footer id="footer">
             <div className="footer-top">
@@ -40,8 +44,8 @@ const Footer = () => {
                         <div className="col-md-3 footer-contact">
                             <h4>Start</h4>
                             <ul className="footer-start-list">
-                                <li>Start A Project</li>
-                                <li>Apply As Developer</li>
+                                <li onClick={() => { dispatch(navigateTo({ path: `/start-a-project` })) }}>Start A Project</li>
+                                <li  onClick={() => { dispatch(navigateTo({ path: `/join-us` })) }}>Apply As Developer</li>
                             </ul>
                         </div>
                     </div>

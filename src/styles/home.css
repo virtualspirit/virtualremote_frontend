@@ -11,9 +11,12 @@ a {
 a.pointer {
 	cursor: pointer;
 }
-textarea.no-resize{
+textarea.no-resize {
 	resize: none;
-  }
+}
+#footer li {
+	cursor: pointer;
+}
 
 a:hover,
 a:active,
