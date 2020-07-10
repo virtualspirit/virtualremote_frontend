@@ -1,9 +1,11 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useFormik } from 'formik';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
-const Form = ({ children }) => {
+const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
     const onDrop = useCallback(acceptedFiles => {
         console.log("files", acceptedFiles)
     }, [])
@@ -11,6 +13,7 @@ const Form = ({ children }) => {
 
     const validate = values => {
         const errors = {};
+
         if (!values.name) {
             errors.name = 'Required';
         } else if (values.name.length > 15) {
@@ -33,60 +36,70 @@ const Form = ({ children }) => {
             errors.email = 'Invalid email address';
         }
         if (!values.phone) {
-            errors.email = 'Required';
+            errors.phone = 'Required';
         } else if (values.phone.length !== 10) {
             errors.phone = 'Invalid phone number';
         }
 
-        if (!values.from) {
-            errors.form = 'Required';
+        if (!values.country) {
+            errors.country = 'Required';
         }
 
         return errors;
     };
-    // const applyUsForm = () => {
-    //     const formik = useFormik({
-    //         initialValues: {
-    //             name: '',
-    //             dob: '',
-    //             gender: "",
-    //             email: '',
-    //             phone: "",
-    //             from: ""
-    //         },
-    //         validate,
-    //         onSubmit: values => {
-    //             console.log("values", values)
-    //         },
-    //     });
-    // }
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            dob: '',
+            gender: "male",
+            email: '',
+            phone: "",
+            country: "malaysia"
+        },
+        validate,
+        onSubmit: (values, { setSubmitting }) => {
+            setSubmitting(false);
+            nextButtonHandler({ qn: Number(qn) });
+        },
+    });
     return (
         <div className="form-section text-left">
             <div className="form-section-div">
-                <form className="form-section-form" >
+                <form className="form-section-form" onSubmit={formik.handleSubmit}>
                     <div className="all-input-btn">
-                        <p className="input-label">Name <span className="requr-star"> * </span></p>
-                        <input type="text" name="" placeholder="Please enter your name" className="input-type form-control" />
-                        <p className="input-label extra-mar-bt">Date of birth <span className="requr-star">*</span></p>
-                        <div className="input-group ">
-                            <input type="text" className="form-control mydatepicker " placeholder="mm/dd/yyyy" />
+                        <p className="input-label">Name <span className={(!formik.values.name || formik.errors.name) ? "requr-star" : "no-error"}> * </span></p>
+                        <input type="text" id="name" name="name"
+                            onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name}
+                            placeholder="Please enter your name" className="input-type form-control" />
+                        <p className="input-label extra-mar-bt">Date of birth <span className={(!formik.values.dob || formik.errors.dob) ? "requr-star" : "no-error"}>*</span></p>
+                        <div style={{ display: "flex" }}>
+                            <input type="text" id="dob" name="dob"
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.dob}
+                                className="form-control mydatepicker " placeholder="mm/dd/yyyy" />
                             <div className="input-group-append">
                                 <span className="input-group-text"><i className="fa fa-calendar" /></span>
                             </div>
                         </div>
-                        <p className="input-label extra-mar-tp">Gender <span className="requr-star">*</span></p>
-                        <select data-placeholder="Select Gender" className=" form-control input-type" >
+                        <p className="input-label extra-mar-tp">Gender <span className={(!formik.values.gender || formik.errors.gender) ? "requr-star" : "no-error"}>*</span></p>
+                        <select id="gender" name="gender" data-placeholder="Select Gender" className=" form-control input-type"
+                            onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.gender}>
                             <option value="male" data-icon="male"> Male</option>
                             <option value="female" data-icon="female"> Female</option>
                             <option value="other" data-icon="other"> Other</option>
                         </select>
-                        <p className="input-label">Email <span className="requr-star">*</span></p>
-                        <input type="email" name="" placeholder="Enter email" className="input-type form-control" />
-                        <p className="input-label">Phone number <span className="requr-star">*</span></p>
-                        <input type="text" name="" placeholder="Enter your phone number" className="input-type form-control" />
-                        <p className="input-label">Where are you from? <span className="requr-star">*</span></p>
-                        <select data-placeholder="Country" className=" form-control input-type" >
+                        <p className="input-label">Email <span className={(!formik.values.email || formik.errors.email) ? "requr-star" : "no-error"}>*</span></p>
+                        <input type="email" name="email" id="email"
+                            onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email}
+                            placeholder="Enter email" className="input-type form-control" />
+                        <p className="input-label">Phone number <span className={(!formik.values.phone || formik.errors.phone) ? "requr-star" : "no-error"}>*</span></p>
+                        <input type="text" name="phone" id="phone"
+                            onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phone}
+                            placeholder="Enter your phone number" className="input-type form-control" />
+                        <p className="input-label">Where are you from? <span className={(!formik.values.country || formik.errors.country) ? "requr-star" : "no-error"}>*</span></p>
+                        <select id="country" name="country" data-placeholder="Country" className=" form-control input-type"
+                            onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.country}>
                             <option value="malaysia" data-icon="malaysia"> Malaysia</option>
+                            <option value="india" data-icon="india"> India</option>
                         </select>
                         <p className="input-label">Attachments</p>
                         <div {...getRootProps()} style={{ height: "132px", border: "1px solid #E0E0E0", borderRadius: "2px" }}>
@@ -100,7 +113,16 @@ const Form = ({ children }) => {
                         <p className="term-privacy">By submit this enquiry, you are agreeing to VRemote’s <a className="pointer">Terms of Service </a>and <a className="pointer">Privacy Policy</a>.</p>
                     </div>
                     <hr />
-                    {children}
+                    {/* {children} */}
+                    <div className="nex-bac-button">
+                        <button className="back-btn"
+                            onClick={_ => backButtonHandler({ qn: Number(qn) })}>
+                            <i className="fa fa-long-arrow-left" />Back
+                        </button>
+                        <button className="next-btn" type="submit" >
+                            Submit<i className="fa fa-long-arrow-right" />
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

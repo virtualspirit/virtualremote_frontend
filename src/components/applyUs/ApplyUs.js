@@ -30,7 +30,7 @@ const ApplyUs = () => {
         onChangeHandler: value => dispatch(changeHandler(value))
     };
     const nexBacButtonProps = {
-        qn, isForm: type === `form`,
+        qn,
         backButtonHandler: value => dispatch(backHandler(value)),
         nextButtonHandler: value => dispatch(nextHandler(value))
     };
@@ -39,7 +39,7 @@ const ApplyUs = () => {
         switch (name) {
             case `radio`: QuestionComponent = RadioQuestionBox; props = radioQuestionBoxProps; break;
             case `textArea`: QuestionComponent = TextAreaQuestionBox; props = textAreaQuestionProps; break;
-            case `form`: QuestionComponent = Form; break;
+            case `form`: QuestionComponent = Form; props = nexBacButtonProps; break;
             case `thank`: QuestionComponent = ThankBox; break;
             default: break;
         }

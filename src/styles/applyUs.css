@@ -325,9 +325,18 @@
 .requr-star {
 	color: red;
 }
-
+.no-error {
+	color: green;
+}
 .drop-text {
 	padding-top: 12%;
 	font-size: 14px;
 	color: #636b73;
+}
+.react-datepicker-wrapper {
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NexBacButton = ({ qn, backButtonHandler, nextButtonHandler, isForm }) => {
+const NexBacButton = ({ qn, backButtonHandler, nextButtonHandler }) => {
     const handleButtonClick = (e, callButton) => {
         e.preventDefault();
         callButton({ qn: Number(qn) });
@@ -13,7 +13,7 @@ const NexBacButton = ({ qn, backButtonHandler, nextButtonHandler, isForm }) => {
                 </button>
             <button className="next-btn"
                 onClick={e => handleButtonClick(e, nextButtonHandler)}>
-                {isForm ? "Submit" : "Next"}<i className="fa fa-long-arrow-right" />
+                Next<i className="fa fa-long-arrow-right" />
             </button>
         </div>
     )

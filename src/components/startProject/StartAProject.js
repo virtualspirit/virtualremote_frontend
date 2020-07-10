@@ -35,7 +35,7 @@ const StartAProject = () => {
         onChangeHandler: value => dispatch(changeHandler(value))
     };
     const nexBacButtonProps = {
-        qn, isForm: type === `form`,
+        qn,
         backButtonHandler: value => dispatch(backHandler(value)),
         nextButtonHandler: value => dispatch(nextHandler(value))
     };
@@ -45,7 +45,7 @@ const StartAProject = () => {
             case `radio`: QuestionComponent = RadioQuestionBox; props = radioQuestionBoxProps; break;
             case `checkbox`: QuestionComponent = CheckBoxQuestion; props = checkBoxQuestionProps; break;
             case `tagInput`: QuestionComponent = InputTagQuestion; props = inputTagQuestionProps; break;
-            case `form`: QuestionComponent = Form; break;
+            case `form`: QuestionComponent = Form; props = nexBacButtonProps; break;
             case `thank`: QuestionComponent = ThankBox; break;
             default: break;
         }
