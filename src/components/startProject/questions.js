@@ -15,7 +15,7 @@ export const questions = [
             { value: "30 - 50", desc: `` },
             { value: "50 - 100", desc: `` },
             { value: "More than 100", desc: `` }
-        ], type: "radio", classForIdea: "develop-learn-grow-3"
+        ], type: "radio", classForIdea: "develop-learn-grow-4 marg-btm2"
     },
     {
         qn: 3, question: "What skills are required for your project?", suggestions: [
@@ -27,7 +27,7 @@ export const questions = [
             `Wordpress`,
             `iOS`,
             `UI Designer`
-        ], type: "tagInput", classForIdea: "develop-learn-grow-3"
+        ], type: "tagInput", classForIdea: "develop-learn-grow-4 marg-btm2"
     },
     {
         qn: 4, question: "What kind of help do you need?", options: [
@@ -41,14 +41,14 @@ export const questions = [
                     { value: "UI/UX Design", desc: `` }
                 ]
             }
-        ], type: "radio", classForIdea: "develop-learn-grow-6"
+        ], type: "radio", classForIdea: "develop-learn-grow-6 marg-btm4"
     },
     {
         qn: 5, question: "Do you have a requirements specifications document?", options: [
             { value: "Yes, I have a clear specifications document prepared.", desc: `` },
             { value: "I just have a basic plan.", desc: `` },
             { value: "I know exactly what I want to develop but I don't have any specifications.", desc: `` }
-        ], type: "radio", classForIdea: "develop-learn-grow-3"
+        ], type: "radio", classForIdea: "develop-learn-grow-3 marg-btm5"
     },
     {
         qn: 6, question: "What kind of developer(s) do you require?", options: [
@@ -56,7 +56,7 @@ export const questions = [
             { value: "Part-time freelancers", desc: `` },
             { value: "Hourly", desc: `` },
             { value: "Not sure yet", desc: `` }
-        ], type: "radio", classForIdea: "develop-learn-grow-3"
+        ], type: "radio", classForIdea: "develop-learn-grow-3 marg-btm6"
     },
     {
         qn: 7, question: "What's your estimated project duration?", options: [
@@ -65,7 +65,7 @@ export const questions = [
             { value: "Several weeks", desc: `` },
             { value: "Several months", desc: `` },
             { value: "Not sure yet", desc: `` }
-        ], type: "radio", classForIdea: "develop-learn-grow-3"
+        ], type: "radio", classForIdea: "develop-learn-grow-3 marg-btm7"
     },
     {
         qn: 8, question: "How soon do you want to start?", options: [
@@ -74,12 +74,12 @@ export const questions = [
             { value: "Several weeks", desc: `` },
             { value: "Several months", desc: `` },
             { value: "Not sure yet", desc: `` }
-        ], type: "radio", classForIdea: "develop-learn-grow-3"
+        ], type: "radio", classForIdea: "develop-learn-grow-3 marg-btm8"
     },
     {
-        qn: 9, type: "form", classForIdea: "develop-learn-grow-10"
+        qn: 9, type: "form", classForIdea: "develop-learn-grow-10 marg-btm9"
     },
     {
-        qn: 10, type: "thank", classForIdea: "develop-learn-grow-3"
+        qn: 10, type: "thank", classForIdea: "develop-learn-grow-3 marg-btm210"
     }
 ]
