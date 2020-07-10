@@ -65,7 +65,7 @@ export const questions = [
         type: "textArea", classForIdea:"develop-learn-grow-8"
     },
     {
-        qn: 10, type: "form", classForIdea:"develop-learn-grow-9"
+        qn: 10, type: "form", classForIdea:"develop-learn-grow-9 marg-btm9"
     },
     {
         qn: 11, type: "thank", classForIdea:"develop-learn-grow-3"
