@@ -10,7 +10,7 @@ const Head = () => {
     const [showMobileNav, setMobileNav] = React.useState(false);
     const headerLabel = [{ label: "Home", path: "/" },
     { label: "CTO", path: "" }, { label: "Devoper", path: "" },
-    { label: "Designer", path: "/join-us" }, { label: "Blog", path: "" }, { label: "Start A Project", path: "/start-a-project" }
+    { label: "Designer", path: "/join-us" }, { label: "Blogs", path: "/blogs" }, { label: "Start A Project", path: "/start-a-project" }
     ];
     const headerClickHandler = ({ path }) => {
         if (!path) return;
@@ -32,7 +32,10 @@ const Head = () => {
         <header id="header" className="fixed-top">
             <div className={showMobileNav ? mobileNav.container : "container"}>
                 <div className="logo float-left">
-                    <a className="scrollto pointer"><img src={vremoteLogo} alt="logo" className="img-fluid" /></a>
+                    <a className="scrollto pointer"
+                        onClick={() => headerClickHandler({ path: "/" })}>
+                        <img src={vremoteLogo} alt="logo" className="img-fluid" />
+                    </a>
                 </div>
                 <nav className={showMobileNav ? mobileNav.nav : "main-nav float-right d-none d-lg-block"}>
                     <ul>
