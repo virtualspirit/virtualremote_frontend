@@ -72,7 +72,7 @@ const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
                             onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name}
                             placeholder="Please enter your name" className="input-type form-control" />
                         <p className="input-label extra-mar-bt">Date of birth <span className={(!formik.values.dob || formik.errors.dob) ? "requr-star" : "no-error"}>*</span></p>
-                        <div style={{ display: "flex" }}>
+                        <div className="input-group">
                             <input type="text" id="dob" name="dob"
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.dob}
                                 className="form-control mydatepicker " placeholder="mm/dd/yyyy" />
