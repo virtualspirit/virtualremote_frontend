@@ -106,7 +106,7 @@ function checkValidServiceWorker(swUrl, config) {
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       const contentType = response.headers.get('content-type');
-      response.headers.set('cache-control','max-age=0,no-cache,no-store,must-revalidate');
+      response.headers.set('Cache-Control','max-age=0,no-cache,no-store,must-revalidate');
       if (
         response.status === 404 ||
         (contentType != null && contentType.indexOf('javascript') === -1)
