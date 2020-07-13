@@ -5,6 +5,14 @@ import applyUs from './applyUs';
 import startProject from './startProject';
 
 export const history = createBrowserHistory();
+history.listen(location => {
+  setTimeout(() => {
+    if (location.action === 'POP') {
+      return;
+    }
+    window.scrollTo(0, 0);
+  });
+});
 const appReducer = combineReducers({
   router: connectRouter(history),
   applyUs, startProject
