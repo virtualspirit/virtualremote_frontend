@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 345px;
 	position: relative;
-	background: url("../assets/bg/bg2.png") no-repeat;
+	background: url("../assets/bg/bg2.jpg") no-repeat;
 	background-size: cover;
 	padding-top: 100px;
 	margin-bottom: 60px;
@@ -156,7 +156,7 @@
   --------------------------------------------------------------*/
 
 .useful-article {
-	background: url("../assets/bg/bg.png") no-repeat;
+	background: url("../assets/bg/bg.jpg") no-repeat;
 	width: 100%;
 	padding-top: 70px;
 	padding-bottom: 70px;

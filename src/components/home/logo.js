@@ -1,7 +1,6 @@
-import workFromHomeImg from '../../assets/Ilustration/working-from-home.png';
-import howItWorksImg1 from '../../assets/Ilustration/vremote-4.png';
-import howItWorksImg2 from '../../assets/Ilustration/vremote-2.png';
-import howItWorksImg3 from '../../assets/Ilustration/vremote-3.png';
+import howItWorksImg1 from '../../assets/Ilustration/vremote-4.jpg';
+import howItWorksImg2 from '../../assets/Ilustration/vremote-2.jpg';
+import howItWorksImg3 from '../../assets/Ilustration/vremote-3.jpg';
 import hire from '../../assets/WhyUs/1.svg';
 import talent from '../../assets/WhyUs/2.svg';
 import leading from '../../assets/WhyUs/3.svg';
@@ -37,7 +36,7 @@ import learnGrow3 from '../../assets/LearnAndGrow/3.png';
 import vremoteLogo from '../../assets/Logo/Default.svg';
 
 export {
-    workFromHomeImg, howItWorksImg1, howItWorksImg2, howItWorksImg3, hire,
+    howItWorksImg1, howItWorksImg2, howItWorksImg3, hire,
     talent, leading, level, management, needs, clogo1, clogo2, clogo3, clogo4, clogo5,
     clogo6, clogo7, clogo8, clogo9, clogo10, clogo11, clogo12, clogo13, clogo14, clogo15,
     IconQuote, skill1, skill2, skill3, skill4, skill6, skill7, skill8, learnGrow1, learnGrow2, learnGrow3, vremoteLogo,

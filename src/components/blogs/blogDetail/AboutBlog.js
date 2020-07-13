@@ -1,6 +1,6 @@
 import React from 'react';
-import blogImg1 from '../../../assets/blogimg/blog-img1.png';
-import blogImg2 from '../../../assets/blogimg/blog-img2.png';
+import blogImg1 from '../../../assets/blogimg/blog-img1.jpg';
+import blogImg2 from '../../../assets/blogimg/blog-img2.jpg';
 import IconQuote from '../../../assets/Label/IconQuote.svg';
 import LazyImage from '../../common/LazyImage';
 
