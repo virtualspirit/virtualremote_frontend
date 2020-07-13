@@ -248,9 +248,8 @@
 		height: auto;
 		padding: 7px;
 	}
-	.all-input-btn .input-type:placeholder-shown {
-		border: 2px solid silver;
-		padding: 7px;
+	input::-webkit-input-placeholder {
+		line-height: normal !important;
 	}
 }
 
