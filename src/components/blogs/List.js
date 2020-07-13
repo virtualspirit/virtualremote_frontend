@@ -25,7 +25,8 @@ const List = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4" style={{ cursor: "pointer" }}>
+                    <div className="col-md-4" style={{ cursor: "pointer" }}
+                        onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                         <div className="bloglist-column">
                             <LazyImage src={learnGrow2} alt={learnGrow2} />
                             <div className="bloglist-small">
@@ -37,7 +38,8 @@ const List = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4" style={{ cursor: "pointer" }}>
+                    <div className="col-md-4" style={{ cursor: "pointer" }}
+                        onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                         <div className="bloglist-column">
                             <LazyImage src={learnGrow3} alt={learnGrow3} />
                             <div className="bloglist-small">
@@ -51,7 +53,8 @@ const List = () => {
                     </div>
                 </div>
                 <div className="row bloglist-row">
-                    <div className="col-md-4" style={{ cursor: "pointer" }}>
+                    <div className="col-md-4" style={{ cursor: "pointer" }}
+                        onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                         <div className="bloglist-column">
                             <LazyImage src={learnGrow3} alt={learnGrow3} />
                             <div className="bloglist-small">
@@ -63,7 +66,8 @@ const List = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4" style={{ cursor: "pointer" }}>
+                    <div className="col-md-4" style={{ cursor: "pointer" }}
+                        onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                         <div className="bloglist-column">
                             <LazyImage src={learnGrow1} alt={learnGrow1} />
                             <div className="bloglist-small">
@@ -75,7 +79,8 @@ const List = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4" style={{ cursor: "pointer" }}>
+                    <div className="col-md-4" style={{ cursor: "pointer" }}
+                        onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                         <div className="bloglist-column">
                             <LazyImage src={learnGrow2} alt={learnGrow2} />
                             <div className="bloglist-small">

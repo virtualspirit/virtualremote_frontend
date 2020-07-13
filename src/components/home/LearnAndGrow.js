@@ -2,8 +2,11 @@ import React from 'react';
 import { learnGrow1, learnGrow2, learnGrow3 } from './logo';
 import LazyImage from '../common/LazyImage';
 import Idea from '../common/Idea';
+import { useDispatch } from "react-redux";
+import { navigateTo } from '../../store/actions/route'
 
 const LearnAndGrow = () => {
+    const dispatch = useDispatch();
     const learnings = [
         {
             image: learnGrow1, title: "DESIGN", heading: "The World Is Our Interface - the Evolution of UI Design",
@@ -32,7 +35,8 @@ const LearnAndGrow = () => {
                 </div>
                 <div className="row">
                     {learnings.map(({ image, title, heading, desc, footL, footR }, key) => (
-                        <div className="col-md-4" key={key}>
+                        <div className="col-md-4" key={key} style={{ cursor: "pointer" }}
+                            onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                             <div className="learn-grow-column">
                                 <LazyImage src={image} alt={title} />
                                 <div className="learn-grow-small">
@@ -48,7 +52,9 @@ const LearnAndGrow = () => {
                 </div>
                 <div className="row">
                     <div className="col-md-12 text-center">
-                        <button className="read-more-btn">Read More <i className="fa fa-long-arrow-right" /></button>
+                        <button className="read-more-btn" onClick={() => { dispatch(navigateTo({ path: `/blogs` })) }}>
+                            Read More <i className="fa fa-long-arrow-right" />
+                        </button>
                     </div>
                 </div>
             </div>
