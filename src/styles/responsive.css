@@ -244,6 +244,10 @@
 	#develop_intro .form-section-div {
 		width: auto;
 	}
+	.all-input-btn .input-type{
+		height: auto;
+		padding: 7px;
+		}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
