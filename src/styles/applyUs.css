@@ -201,6 +201,7 @@
 	height: 35px;
 	margin: 10px 0;
 	padding: 0 10px;
+	line-height: inherit !important;
 }
 
 .develop-learn-grow-2 {
