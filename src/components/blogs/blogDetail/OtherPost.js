@@ -3,9 +3,11 @@ import learnGrow1 from '../../../assets/LearnAndGrow/1.png';
 import learnGrow2 from '../../../assets/LearnAndGrow/2.png';
 import learnGrow3 from '../../../assets/LearnAndGrow/3.png';
 import LazyImage from '../../common/LazyImage';
+import { useDispatch } from "react-redux";
+import { navigateTo } from '../../../store/actions/route'
 
 const OtherPost = () => {
-
+    const dispatch = useDispatch();
     return (
         <div className="bloglist-section bloglist-section-down">
             <div className="container">
@@ -16,7 +18,8 @@ const OtherPost = () => {
                 </div>
                 <div className="row bloglist-row">
                     <div className="col-md-4">
-                        <div className="bloglist-column">
+                        <div className="bloglist-column" style={{ cursor: "pointer" }}
+                            onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                             <LazyImage src={learnGrow1} alt={learnGrow1} />
                             <div className="bloglist-small">
                                 <a className="class-no-link pointer">DESIGN</a>
@@ -28,7 +31,8 @@ const OtherPost = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="bloglist-column">
+                        <div className="bloglist-column" style={{ cursor: "pointer" }}
+                            onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                             <LazyImage src={learnGrow2} alt={learnGrow2} />
                             <div className="bloglist-small">
                                 <a className="class-no-link pointer">WEB DEVELOPMENT</a>
@@ -40,7 +44,8 @@ const OtherPost = () => {
                         </div>
                     </div>
                     <div className="col-md-4">
-                        <div className="bloglist-column">
+                        <div className="bloglist-column" style={{ cursor: "pointer" }}
+                            onClick={() => { dispatch(navigateTo({ path: `/blog-detail` })) }}>
                             <LazyImage src={learnGrow3} alt={learnGrow3} />
                             <div className="bloglist-small">
                                 <a className="class-no-link pointer">USER EXPERIENCE</a>
