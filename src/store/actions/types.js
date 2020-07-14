@@ -3,6 +3,17 @@ export const REMOVE_APP_STATES = 'REMOVE_APP_STATES';
 //route
 export const NAVIGATE_TO = 'NAVIGATE_TO';
 
+//fetch
+export const FETCH_DATA = "FETCH_DATA";
+export const FETCH_DATA_SYNC = "FETCH_DATA_SYNC";
+export const REQUEST = "FETCH_REQUEST";
+export const SUCCESS = "FETCH_SUCCESS";
+export const FAILURE = "FETCH_FAILURE";
+
+export const api = {
+    applyUsQuestions: "https://jsonplaceholder.typicode.com/comments"
+  };
+
 //Apply-US
 export const APPLY_US_SET_INITIAL_STATE = 'APPLY_US_SET_INITIAL_STATE';
 export const APPLY_US_SET_VALUE = 'APPLY_US_SET_VALUE';

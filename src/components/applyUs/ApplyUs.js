@@ -8,18 +8,27 @@ import RadioQuestionBox from '../common/RadioQuestionBox';
 import TextAreaQuestionBox from '../common/TextAreaQuestionBox';
 import NexBacButton from '../common/NexBacButton';
 import ThankBox from '../common/ThankBox';
+import Loader from '../common/Loader';
 import Form from './Form';
 import { questions } from './questions';
 import { setInitialValue, changeHandler, backHandler, nextHandler } from '../../store/actions/applyUs';
 import { getState } from '../../store/selectors/applyUs';
+import { getResponse } from '../../store/selectors/fetch';
+// import { api } from "../../store/actions/types";
+// import { fetchData } from "../../store/actions/fetch";
+// import jsonRes from '../../data/questions.json'
 
 const ApplyUs = () => {
     const dispatch = useDispatch();
     const {
         currentQuestion: { type, classForIdea, qn, question, options, placeHolder, textAreaAnswer, othersAnswer },
-        selectedOption
+        selectedOption, selectedAnswers
     } = useSelector(getState);
-    React.useEffect(() => { dispatch(setInitialValue({ questions })) }, []);
+    const { loading, error } = useSelector(getResponse);
+    React.useEffect(() => {
+        // dispatch(fetchData(api.applyUsQuestions, "applyUsQuestions"));
+        dispatch(setInitialValue({ questions }));
+    }, []);
     React.useEffect(() => { window.scrollTo(0, 70) }, [qn]);
 
     const radioQuestionBoxProps = {
@@ -31,16 +40,22 @@ const ApplyUs = () => {
         onChangeHandler: value => dispatch(changeHandler(value))
     };
     const nexBacButtonProps = {
-        qn,
+        qn, selectedAnswers, 
         backButtonHandler: value => dispatch(backHandler(value)),
         nextButtonHandler: value => dispatch(nextHandler(value))
+    };
+    const formProps = {
+        qn, selectedAnswers, 
+        backButtonHandler: value => dispatch(backHandler(value)),
+        nextButtonHandler: value => dispatch(nextHandler(value)),
+        onChangeHandler: value => dispatch(changeHandler(value))
     };
     const getQuestionComponent = (name) => {
         let QuestionComponent, props;
         switch (name) {
             case `radio`: QuestionComponent = RadioQuestionBox; props = radioQuestionBoxProps; break;
             case `textArea`: QuestionComponent = TextAreaQuestionBox; props = textAreaQuestionProps; break;
-            case `form`: QuestionComponent = Form; props = nexBacButtonProps; break;
+            case `form`: QuestionComponent = Form; props = formProps; break;
             case `thank`: QuestionComponent = ThankBox; break;
             default: break;
         }
@@ -49,7 +64,7 @@ const ApplyUs = () => {
         </QuestionComponent>);
     }
 
-    return (
+    return loading ? <Loader /> : (
         <>
             <Head />
             <Intro>{getQuestionComponent(type)}</Intro>

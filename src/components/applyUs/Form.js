@@ -1,15 +1,15 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useFormik } from 'formik';
-import DatePicker from "react-datepicker";
+// import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
-const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
+const Form = ({ qn, backButtonHandler, nextButtonHandler, selectedAnswers, onChangeHandler, children }) => {
     const onDrop = useCallback(acceptedFiles => {
         console.log("files", acceptedFiles)
     }, [])
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+    // const [startDate, setStartDate] = React.useState(new Date());
 
     const validate = values => {
         const errors = {};
@@ -50,7 +50,7 @@ const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
     const formik = useFormik({
         initialValues: {
             name: '',
-            dob: '',
+            dob: "",
             gender: "male",
             email: '',
             phone: "",
@@ -59,6 +59,8 @@ const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
         validate,
         onSubmit: (values, { setSubmitting }) => {
             setSubmitting(false);
+            onChangeHandler({ q: "formValues", a: values });
+            console.log("submitted", values, selectedAnswers);
             nextButtonHandler({ qn: Number(qn) });
         },
     });
@@ -80,6 +82,13 @@ const Form = ({ qn, backButtonHandler, nextButtonHandler, children }) => {
                                 <span className="input-group-text"><i className="fa fa-calendar" /></span>
                             </div>
                         </div>
+                        {/* <DatePicker autoComplete="none" dateFormat="mm/dd/yyyy" selected={startDate} value={formik.values.dob} onChange={date => { setStartDate(date); formik.handleChange("dob", date)}}
+                            customInput={(<div className="input-group"> <input type="text" id="dob" name="dob"
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.dob}
+                                className="form-control mydatepicker " placeholder="mm/dd/yyyy" />
+                                <div className="input-group-append">
+                                    <span className="input-group-text"><i className="fa fa-calendar" /></span>
+                                </div></div>)} /> */}
                         <p className="input-label extra-mar-tp">Gender <span className={(!formik.values.gender || formik.errors.gender) ? "requr-star" : "no-error"}>*</span></p>
                         <select id="gender" name="gender" data-placeholder="Select Gender" className=" form-control input-type"
                             onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.gender}>

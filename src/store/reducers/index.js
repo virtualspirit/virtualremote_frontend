@@ -3,6 +3,7 @@ import { connectRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import applyUs from './applyUs';
 import startProject from './startProject';
+import fetch from './fetch';
 
 export const history = createBrowserHistory();
 history.listen(location => {
@@ -14,7 +15,7 @@ history.listen(location => {
   });
 });
 const appReducer = combineReducers({
-  router: connectRouter(history),
+  router: connectRouter(history), fetch,
   applyUs, startProject
 });
 
