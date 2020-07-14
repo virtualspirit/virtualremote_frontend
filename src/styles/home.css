@@ -219,7 +219,7 @@ p {
 	width: 100%;
 	height: 500px;
 	position: relative;
-	background: url("../assets/bg/bg2.jpg") no-repeat;
+	background: url("../assets/bg/bg2.png") no-repeat;
 	background-size: cover;
 	padding-top: 100px;
 }
@@ -353,7 +353,7 @@ p {
 	  Build great teams effortlessly
   --------------------------------------------------------------*/
 .build-great {
-	background: url("../assets/bg/bg2.jpg") no-repeat;
+	background: url("../assets/bg/bg2.png") no-repeat;
 }
 
 .build-great {
@@ -571,7 +571,7 @@ p {
   --------------------------------------------------------------*/
 
 .great-freelancer {
-	background: url("../assets/bg/bg.jpg") no-repeat;
+	background: url("../assets/bg/bg.png") no-repeat;
 	width: 100%;
 	padding-top: 170px;
 	padding-bottom: 50px;

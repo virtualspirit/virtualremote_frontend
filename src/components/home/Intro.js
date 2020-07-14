@@ -1,5 +1,5 @@
 import React from 'react';
-import workFromHomeImg from '../../assets/Ilustration/working-from-home.jpg';
+import workFromHomeImg from '../../assets/Ilustration/working-from-home.png';
 import LazyImage from '../common/LazyImage';
 import { useDispatch } from "react-redux";
 import { navigateTo } from '../../store/actions/route'
