@@ -10,7 +10,8 @@ const NexBacButton = ({ qn, backButtonHandler, nextButtonHandler }) => {
             <button className="back-btn"
                 onClick={e => handleButtonClick(e, backButtonHandler)}>
                 <i className="fa fa-long-arrow-left" />Back
-                </button>
+            </button>
+            <span style={{padding: '0 2px'}}></span>
             <button className="next-btn"
                 onClick={e => handleButtonClick(e, nextButtonHandler)}>
                 Next<i className="fa fa-long-arrow-right" />

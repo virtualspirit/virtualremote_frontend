@@ -20,6 +20,7 @@ const ApplyUs = () => {
         selectedOption
     } = useSelector(getState);
     React.useEffect(() => { dispatch(setInitialValue({ questions })) }, []);
+    React.useEffect(() => { window.scrollTo(0, 70) }, [qn]);
 
     const radioQuestionBoxProps = {
         question, options, selectedOption, othersAnswer,

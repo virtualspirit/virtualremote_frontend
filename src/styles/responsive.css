@@ -488,8 +488,11 @@
 	.develop-learn-grow-10.marg-btm9 {
 		margin-top: 1170px !important;
 	}
-
-	/* Today Code */
+	/* adjusted Code */
+	.develop-learn-grow-9.marg-btm9 {
+		margin-top: 800px !important;
+	}
+	
 	.develop-learn-grow-9 {
 		margin-bottom: 330px;
 		margin-top: 730px;
